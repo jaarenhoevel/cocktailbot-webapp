@@ -2,24 +2,11 @@ const plugin = require("tailwindcss/plugin");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: {
-    enabled: true,
-    content: [
-      "./**/*.html",
-      "./*.html",
-      "./**/*.js",
-      "./*.js",
-      "./**/*.svelte",
-      "./*.svelte",
-    ],
-    options: {
-      safelist: [],
-    },
-  },
+  content: ["./src/**/*.svelte"],
   theme: {
-    colors: {
+    /**colors: {
       ...colors,
-    },
+    },*/
     extend: {
       minHeight: {
         "screen-75": "75vh",
@@ -79,20 +66,6 @@ module.exports = {
       },
     },
   },
-  variants: [
-    "responsive",
-    "group-hover",
-    "focus-within",
-    "first",
-    "last",
-    "odd",
-    "even",
-    "hover",
-    "focus",
-    "active",
-    "visited",
-    "disabled",
-  ],
   plugins: [
     require("@tailwindcss/forms"),
     plugin(function ({ addComponents, theme }) {
