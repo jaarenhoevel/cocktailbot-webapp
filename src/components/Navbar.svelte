@@ -8,7 +8,7 @@
 </script>
 
 <nav
-    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white shadow"
+    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white dark:bg-slate-900 shadow"
 >
     <div
         class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -18,7 +18,7 @@
         >
             <a
                 use:link
-                class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
+                class="text-slate-700 dark:text-slate-200 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
                 href="/"
             >
                 CocktailBot
@@ -28,7 +28,7 @@
                 type="button"
                 on:click={setNavbarOpen}
             >
-                <i class="fas fa-bars" />
+                <i class="fas fa-bars dark:text-slate-200" />
             </button>
         </div>
         <div
@@ -40,11 +40,11 @@
             <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
                 <li class="flex items-center">
                     <a
-                        class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+                        class="hover:text-slate-500 text-slate-700 dark:text-slate-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
                         href="/"
                     >
                         <i
-                            class="text-blueGray-400 far fa-file-alt text-lg leading-lg mr-2"
+                            class="text-slate-400 far fa-file-alt text-lg leading-lg mr-2"
                         />
                         Docs
                     </a>
@@ -52,12 +52,12 @@
 
                 <li class="flex items-center">
                     <a
-                        class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+                        class="hover:text-slate-500 text-slate-700 dark:text-slate-300 px-3 py-2 flex items-center text-xs uppercase font-bold"
                         href="https://github.com/jaarenhoevel/cocktailbot-core"
                         target="_blank"
                     >
                         <i
-                            class="text-blueGray-400 fab fa-github text-lg leading-lg mr-2"
+                            class="text-slate-400 fab fa-github text-lg leading-lg mr-2"
                         />
                         GitHub
                     </a>
