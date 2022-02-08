@@ -8,7 +8,7 @@
 </script>
 
 <nav
-    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white dark:bg-slate-900 shadow"
+    class="top-0 fixed z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-white dark:bg-slate-800 shadow"
 >
     <div
         class="container px-4 mx-auto flex flex-wrap items-center justify-between"

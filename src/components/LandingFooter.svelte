@@ -63,6 +63,7 @@
                                 <a
                                     class="text-slate-600 hover:text-slate-800 dark:text-slate-400 hover:dark:text-slate-200 font-semibold block pb-2 text-sm"
                                     href="/privacy_policy"
+                                    target="_blank"
                                 >
                                     Privacy Policy
                                 </a>
@@ -71,6 +72,7 @@
                                 <a
                                     class="text-slate-600 hover:text-slate-800 dark:text-slate-400 hover:dark:text-slate-200 font-semibold block pb-2 text-sm"
                                     href="/imprint"
+                                    target="_blank"
                                 >
                                     Imprint
                                 </a>
@@ -84,9 +86,9 @@
         <div
             class="flex flex-wrap items-center md:justify-between justify-center"
         >
-            <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+            <div class="w-full md:w-8/12 px-4 mx-auto text-center">
                 <div class="text-sm text-slate-500 dark:text-slate-600 font-semibold py-1">
-                    Copyright © {date} János Arenhövel
+                    Copyright © {date} János Arenhövel - <a href="https://www.creative-tim.com/product/notus-svelte">Notus Svelte by Creative Tim</a>
                 </div>
             </div>
         </div>
