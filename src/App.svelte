@@ -1,13 +1,13 @@
 <script>
     import { Router, Route } from "svelte-routing";
 
-    import Landing from "./views/Landing.svelte";
+    import Connect from "./views/Connect.svelte";
     import Control from "./layouts/Control.svelte";
 
     export let url = "";
   </script>
   
   <Router url="{url}">
-    <Route path="/" component="{Landing}" />
-    <Route path="control/*control" component="{Control}" />
+    <Route path="/" component={Connect} />
+    <Route path="/*control" component="{Control}" />
   </Router>
