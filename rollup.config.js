@@ -47,7 +47,7 @@ const indexTemplate = `
     <script defer src="<<live-preview-link>>/build/bundle.js"></script>
   </head>
 
-  <body class="text-blueGray-700 antialiased">
+  <body class="text-slate-700 antialiased">
     <noscript>
       <strong
         >Please enable JavaScript in your browser.</strong
