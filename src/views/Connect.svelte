@@ -1,8 +1,47 @@
 <script>
+    import { onMount } from "svelte";
+
     import ConnectNavbar from "../components/ConnectNavbar.svelte";
     import ConnectFooter from "../components/ConnectFooter.svelte";
 
     const background = "../assets/img/connect_bg.png";
+
+    let address = localStorage.getItem("api-address") || "";
+    let port = localStorage.getItem("api-port") || 8080;
+
+    let errorMessage = "";
+
+    onMount(() => {
+        if (address === "") return;
+
+        connect();
+    });
+
+    async function connect(event = null) {
+        const { currentTarget: btn = null } = event || {};
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = "Connecting...";
+        }
+
+        try {
+            await fetch(`http://${address}:${port}/status`);
+
+            localStorage.setItem("api-address", address);
+            localStorage.setItem("api-port", port);
+            
+            location.href = "/dashboard";
+        } catch (err) {
+            errorMessage = err.message;
+        }
+
+        if (btn) {
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = "Connect";
+            }, 1000);
+        }
+    }
 </script>
 
 <div>
@@ -43,6 +82,7 @@
                                             type="email"
                                             class="border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             placeholder="Address"
+                                            bind:value={address}
                                         />
                                     </div>
                                     <div class="relative w-full mb-3">
@@ -54,21 +94,24 @@
                                         </label>
                                         <input
                                             id="grid-email"
-                                            type="email"
+                                            type="number"
                                             class="border-0 px-3 py-3 placeholder-slate-300 text-slate-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                             placeholder="Port"
-                                            value="8080"
+                                            bind:value={port}
                                         />
                                     </div>
 
                                     <div class="text-center mt-6">
                                         <button
-                                          class="bg-slate-800 text-white active:bg-slate-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                                          type="button"
+                                            class="bg-slate-800 text-white active:bg-slate-600 disabled:opacity-50 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                                            type="button"
+                                            on:click={connect}
                                         >
-                                          Connect
+                                            Connect
                                         </button>
-                                      </div>
+                                    </div>
+
+                                    <p class="mt-2 text-red-600 text-sm">{errorMessage}</p>
                                 </form>
                             </div>
                         </div>
