@@ -1,8 +1,8 @@
 <script>
     import { onMount } from "svelte";
 
-    import ConnectNavbar from "../components/ConnectNavbar.svelte";
-    import ConnectFooter from "../components/ConnectFooter.svelte";
+    import Navbar from "../components/Connect/Navbar.svelte";
+    import Footer from "../components/Connect/Footer.svelte";
 
     const background = "../assets/img/connect_bg.png";
 
@@ -45,7 +45,7 @@
 </script>
 
 <div>
-    <ConnectNavbar />
+    <Navbar />
     <main>
         <section class="relative w-full h-full py-40 min-h-screen">
             <div
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <ConnectFooter absolute="true" />
+            <Footer absolute="true" />
         </section>
     </main>
 </div>

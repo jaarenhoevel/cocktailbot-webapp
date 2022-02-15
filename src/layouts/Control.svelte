@@ -1,21 +1,25 @@
 <script>
     import { Router, Route } from "svelte-routing";
 
-    import Sidebar from "../components/Sidebar.svelte";
-    import ControlNavbar from "components/ControlNavbar.svelte";
-    import HeaderStats from "components/HeaderStats.svelte";
-    import ControlFooter from "components/ControlFooter.svelte";
+    import Sidebar from "../components/Control/Sidebar.svelte";
+    import Navbar from "components/Control/Navbar.svelte";
+    import HeaderStats from "components/Control/HeaderStats.svelte";
+    import Footer from "components/Control/Footer.svelte";
 
     export let location = "";
+    export let control;
 </script>
 
 <div>
     <Sidebar {location} />
     <div class="relative md:ml-64 bg-slate-100 dark:bg-slate-800">
-        <ControlNavbar {location} />
+        <Navbar {location} />
         <HeaderStats />
         <div class="px-4 md:px-10 mx-auto w-full -m-24">
-            <ControlFooter />    
+            <Router url={control}>
+                <Route path="dashboard" component="Dashboard" />
+            </Router>
+            <Footer />    
         </div>
     </div>
 </div>

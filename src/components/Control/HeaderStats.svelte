@@ -1,6 +1,6 @@
 <script>
     // core components
-    import CardStats from "components/CardStats.svelte";
+    import CardStats from "components/Control/CardStats.svelte";
 </script>
 
 <!-- Header -->
