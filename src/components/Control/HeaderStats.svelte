@@ -1,23 +1,13 @@
 <script>
-    import { onDestroy } from "svelte";
     import { status } from "../../stores/bot.js";
 
     import CardStats from "components/Control/CardStats.svelte";
 
-    let statusMessage = "CONNECTING...";
-    let currentOutput = "DEFAULT";
-    let currentDrink = "NONE";
-    let temperature = "-°C";
+    $: statusMessage = ($status.ready) ? "READY": "BUSY";
+    $: currentOutput = ($status.activeOutput || "NOT SET").toUpperCase();
+    $: currentDrink = $status.currentDrink || "NONE";
+    $: temperature = "-°C";
 
-    const statusUnsubscribe = status.subscribe((s) => {
-        if (Object.entries(s).length === 0) return statusMessage = "NOT CONNECTED";
-        
-        statusMessage = (s.ready) ? "READY": "BUSY";
-        currentDrink = s.currentDrink || "NONE";
-        currentOutput = s.currentOutput || "NOT SET";
-    });
-
-    onDestroy(statusUnsubscribe);
 </script>
 
 <!-- Header -->
