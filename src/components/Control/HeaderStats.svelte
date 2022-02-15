@@ -1,11 +1,11 @@
 <script>
-    import { status, config } from "../../stores/bot.js";
+    import { status, config, drinks } from "../../stores/bot.js";
 
     import CardStats from "components/Control/CardStats.svelte";
 
     $: statusMessage = ($status.ready) ? "READY": "BUSY";
     $: currentOutput = ($config.outputs?.[$status.activeOutput]?.name || "NOT SET").toUpperCase();
-    $: currentDrink = $status.currentDrink || "NONE";
+    $: currentDrink = ($drinks?.[$status.currentDrink]?.name || "NONE").toUpperCase();
     $: temperature = "-°C";
 
 </script>
