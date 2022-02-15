@@ -1,7 +1,5 @@
 <script>
     export let location;
-
-    console.log(location);
 </script>
 
 <!-- Navbar -->
