@@ -1,6 +1,6 @@
 import { readable } from "svelte/store";
 
-const apiAddress = `http://${localStorage.getItem("api-address") || "localhost"}:${localStorage.getItem("api-port") || 8080}`;
+export const apiAddress = `http://${localStorage.getItem("api-address") || "localhost"}:${localStorage.getItem("api-port") || 8080}`;
 
 export const status = readable({}, function start(set) {
     const update = async () => {
