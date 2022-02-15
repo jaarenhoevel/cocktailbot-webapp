@@ -16,7 +16,7 @@
                     Copyright © {date}
                     <a
                         href="https://github.com/jaarenhoevel"
-                        class="text-slate-500 hover:text-slate-700 text-sm font-semibold py-1"
+                        class="text-slate-500 hover:text-slate-300 text-sm font-semibold py-1"
                     >
                         János Arenhövel
                     </a>
@@ -29,7 +29,7 @@
                     <li>
                         <a
                             href="https://www.creative-tim.com?ref=ns-footer-small"
-                            class="text-slate-600 hover:text-slate-800 text-sm font-semibold block py-1 px-3"
+                            class="text-slate-600 hover:text-slate-400 text-sm font-semibold block py-1 px-3"
                         >
                             Theme by CreativeTim
                         </a>
