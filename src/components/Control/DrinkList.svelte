@@ -2,18 +2,7 @@
     // core components
     import Dropdown from "components/Control/DrinkListDropdown.svelte";
 
-    const bootstrap = "../assets/img/bootstrap.jpg";
-    const angular = "../assets/img/angular.jpg";
-    const sketch = "../assets/img/sketch.jpg";
-    const react = "../assets/img/react.jpg";
-    const vue = "../assets/img/react.jpg";
-
-    const team1 = "../assets/img/team-1-800x800.jpg";
-    const team2 = "../assets/img/team-2-800x800.jpg";
-    const team3 = "../assets/img/team-3-800x800.jpg";
-    const team4 = "../assets/img/team-4-470x470.png";
-
-    // can be one of light or dark
+    // default or accent color
     export let color = "accent";
 </script>
 
