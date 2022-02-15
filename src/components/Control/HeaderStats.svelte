@@ -1,30 +1,23 @@
 <script>
     import { onDestroy } from "svelte";
+    import { status } from "../../stores/bot.js";
 
     import CardStats from "components/Control/CardStats.svelte";
-
-    export let bot;
-
-    const interval = setInterval(getStatus, 2500);
-    onDestroy(() => clearInterval(interval));
-
-    async function getStatus() {
-        try {
-            const response = await fetch(`http://${bot.api.address}:${bot.api.port}/status`);
-            const status = await response.json();
-
-            statusMessage = (status.ready) ? "READY": "BUSY";
-            currentDrink = bot.drinks[status.currentDrink] || "NONE";
-            currentOutput = status.currentOutput || "NOT SET";
-        } catch (err) {
-            statusMessage = "NOT CONNECTED";
-        }
-    }
 
     let statusMessage = "CONNECTING...";
     let currentOutput = "DEFAULT";
     let currentDrink = "NONE";
     let temperature = "-°C";
+
+    const statusUnsubscribe = status.subscribe((s) => {
+        if (Object.entries(s).length === 0) return statusMessage = "NOT CONNECTED";
+        
+        statusMessage = (s.ready) ? "READY": "BUSY";
+        currentDrink = s.currentDrink || "NONE";
+        currentOutput = s.currentOutput || "NOT SET";
+    });
+
+    onDestroy(statusUnsubscribe);
 </script>
 
 <!-- Header -->
