@@ -6,6 +6,7 @@
     import Navbar from "components/Control/Navbar.svelte";
     import HeaderStats from "components/Control/HeaderStats.svelte";
     import Footer from "components/Control/Footer.svelte";
+import Dashboard from "../views/Control/Dashboard.svelte";
 
     export let location = "";
     export let control;
@@ -43,7 +44,7 @@
         <HeaderStats {bot} />
         <div class="px-4 md:px-10 mx-auto w-full -m-24">
             <Router url={control}>
-                
+                <Route path="/dashboard" component={Dashboard} />    
             </Router>
             <Footer />    
         </div>

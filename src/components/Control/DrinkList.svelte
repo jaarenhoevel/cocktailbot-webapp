@@ -1,0 +1,151 @@
+<script>
+    // core components
+    import Dropdown from "components/Control/DrinkListDropdown.svelte";
+
+    const bootstrap = "../assets/img/bootstrap.jpg";
+    const angular = "../assets/img/angular.jpg";
+    const sketch = "../assets/img/sketch.jpg";
+    const react = "../assets/img/react.jpg";
+    const vue = "../assets/img/react.jpg";
+
+    const team1 = "../assets/img/team-1-800x800.jpg";
+    const team2 = "../assets/img/team-2-800x800.jpg";
+    const team3 = "../assets/img/team-3-800x800.jpg";
+    const team4 = "../assets/img/team-4-470x470.png";
+
+    // can be one of light or dark
+    export let color = "accent";
+</script>
+
+<div
+    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded {color ===
+    'default'
+        ? 'bg-white'
+        : 'bg-red-800 text-white'}"
+>
+    <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3
+                    class="font-semibold text-lg {color === 'default'
+                        ? 'text-slate-700'
+                        : 'text-white'}"
+                >
+                    Drinks
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="block w-full overflow-x-auto">
+        <!-- Projects table -->
+        <table class="items-center w-full bg-transparent border-collapse">
+            <thead>
+                <tr>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    >
+                        Name
+                    </th>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    >
+                        Ingredients
+                    </th>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    >
+                        Proof
+                    </th>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    >
+                        Status
+                    </th>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    >
+                        Available Amount
+                    </th>
+                    <th
+                        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
+                        'default'
+                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            : 'bg-red-700 text-red-200 border-red-600'}"
+                    />
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+                    >
+                    <div
+                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-slate-800"
+                    >
+                        <i class="fas fa-glass-whiskey"></i>
+                    </div>
+                        <span
+                            class="ml-3 font-bold {color === 'default'
+                                ? 'btext-slate-600'
+                                : 'text-whit'}"
+                        >
+                            Test 1
+                        </span>
+                    </th>
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                    >
+                        3
+                    </td>
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                    >
+                        12%    
+                    </td>
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                    >
+                        <i class="fas fa-circle text-green-500 mr-2" /> Available    
+                    </td>
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                    >
+                        <div class="flex items-center">
+                            <span class="mr-2">247ml</span>
+                            <div class="relative w-full">
+                                <div
+                                    class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
+                                >
+                                    <div
+                                        style="width: 60%;"
+                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td
+                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+                    >
+                        <Dropdown />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
