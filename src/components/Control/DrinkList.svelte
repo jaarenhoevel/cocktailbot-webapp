@@ -148,8 +148,9 @@
                         >
                             <div class="flex items-center">
                                 <button
-                                    class="bg-red-600 text-white active:bg-slate-600 disabled:opacity-50 text-sm font-bold uppercase px-1 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                                    class="bg-red-600 text-white active:bg-red-500 disabled:opacity-50 text-sm font-bold uppercase px-1 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                                     type="button"
+                                    disabled="{!drink.available > 0}"
                                 >Make</button>
                                 <Dropdown {color}/>
                             </div>
