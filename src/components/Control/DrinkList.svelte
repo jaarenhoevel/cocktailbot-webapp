@@ -12,7 +12,7 @@
 
     onMount(async () => {
         try {
-            const result = await fetch(apiAddress + "/drinks");
+            const result = await fetch(`${apiAddress}/drinks${available ? "?available=1" : ""}`);
             drinks = await result.json();
         } catch (err) {
 
@@ -146,7 +146,13 @@
                         <td
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
                         >
-                            <Dropdown />
+                            <div class="flex items-center">
+                                <button
+                                    class="bg-red-600 text-white active:bg-slate-600 disabled:opacity-50 text-sm font-bold uppercase px-1 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                                    type="button"
+                                >Make</button>
+                                <Dropdown {color}/>
+                            </div>
                         </td>
                     </tr>
                 {/each}

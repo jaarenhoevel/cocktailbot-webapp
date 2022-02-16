@@ -9,6 +9,8 @@
     let btnDropdownRef;
     let popoverDropdownRef;
 
+    export let color = "default";
+
     const toggleDropdown = (event) => {
         event.preventDefault();
         if (dropdownPopoverShow) {
@@ -24,7 +26,9 @@
 
 <div>
     <a
-        class="text-slate-500 py-1 px-3"
+        class="{color === 'default'
+            ? 'text-slate-500'
+            : 'text-white'} py-1 px-3"
         href="#pablo"
         bind:this={btnDropdownRef}
         on:click={toggleDropdown}
@@ -38,25 +42,18 @@
             : 'hidden'}"
     >
         <a
-            href="#pablo"
+            href="#action"
             on:click={(e) => e.preventDefault()}
             class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700"
         >
-            Action
+            Edit
         </a>
         <a
-            href="#pablo"
+            href="#action"
             on:click={(e) => e.preventDefault()}
             class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700"
         >
-            Another action
-        </a>
-        <a
-            href="#pablo"
-            on:click={(e) => e.preventDefault()}
-            class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-slate-700"
-        >
-            Something else here
+            Add to favorites
         </a>
     </div>
 </div>
