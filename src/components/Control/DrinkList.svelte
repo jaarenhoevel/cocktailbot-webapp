@@ -23,7 +23,7 @@
 <div
     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded {color ===
     'default'
-        ? 'bg-white'
+        ? 'bg-white dark:bg-slate-900'
         : 'bg-red-800 text-white'}"
 >
     <div class="rounded-t mb-0 px-4 py-3 border-0">
@@ -31,7 +31,7 @@
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3
                     class="font-semibold text-lg {color === 'default'
-                        ? 'text-slate-700'
+                        ? 'text-slate-700 dark:text-slate-300'
                         : 'text-white'}"
                 >
                     {available ? "Available " : ""}Drinks
@@ -47,7 +47,7 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     >
                         Name
@@ -55,7 +55,7 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     >
                         Ingredients
@@ -63,7 +63,7 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     >
                         Proof
@@ -71,7 +71,7 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     >
                         Status
@@ -79,7 +79,7 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     >
                         Available Amount
@@ -87,25 +87,25 @@
                     <th
                         class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left {color ===
                         'default'
-                            ? 'bg-slate-50 text-slate-500 border-slate-100'
+                            ? 'bg-slate-50 dark:bg-slate-900 text-slate-500 border-slate-100 dark:border-slate-700'
                             : 'bg-red-700 text-red-200 border-red-600'}"
                     />
                 </tr>
             </thead>
             <tbody>
                 {#each Object.entries(drinks) as [drinkId, drink]}    
-                    <tr>
+                    <tr class="dark:text-slate-300">
                         <th
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
                         >
                         <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-slate-800"
+                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-slate-700"
                         >
                             <i class="fas fa-glass-whiskey"></i>
                         </div>
                             <a
                                 class="ml-3 font-bold {color === 'default'
-                                    ? 'text-slate-600'
+                                    ? 'text-slate-600 dark:text-slate-200'
                                     : 'text-white'}"
                                 href="/drinks/{drinkId}"
                             >
@@ -134,11 +134,11 @@
                                 <span class="mr-2">{drink.available}ml</span>
                                 <div class="relative w-full">
                                     <div
-                                        class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
+                                        class="overflow-hidden h-2 text-xs flex rounded {drink.available > 250 ? "bg-green-200" : "bg-red-200"}"
                                     >
                                         <div
                                             style="width: {(drink.available / 2000) * 100}%;"
-                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
+                                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center {drink.available > 250 ? "bg-green-500" : "bg-red-500"}"
                                         />
                                     </div>
                                 </div>
