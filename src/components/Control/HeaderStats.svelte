@@ -5,7 +5,7 @@
 
     $: statusMessage = ($status.ready) ? "READY": "BUSY";
     $: currentOutput = ($config.outputs?.[$status.activeOutput]?.name || "NOT SET").toUpperCase();
-    $: currentDrink = ($drinks?.[$status.currentDrink]?.name || "NONE").toUpperCase();
+    $: currentDrink = ($status?.drink?.name || "NONE").toUpperCase();
     $: temperature = "-°C";
 
 </script>
