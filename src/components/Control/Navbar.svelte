@@ -12,7 +12,7 @@
         <!-- Brand -->
         <a
             class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
-            href="#pablo"
+            href="#control"
             on:click={(e) => e.preventDefault()}
         >
             {location.pathname.replace("/", "")}

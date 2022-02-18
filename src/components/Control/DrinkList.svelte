@@ -93,7 +93,7 @@
                 </tr>
             </thead>
             <tbody>
-                {#each Object.values(drinks) as drink}    
+                {#each Object.entries(drinks) as [drinkId, drink]}    
                     <tr>
                         <th
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
@@ -103,13 +103,14 @@
                         >
                             <i class="fas fa-glass-whiskey"></i>
                         </div>
-                            <span
+                            <a
                                 class="ml-3 font-bold {color === 'default'
                                     ? 'text-slate-600'
                                     : 'text-white'}"
+                                href="/drinks/{drinkId}"
                             >
                                 {drink.name}
-                            </span>
+                            </a>
                         </th>
                         <td
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -146,14 +147,7 @@
                         <td
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
                         >
-                            <div class="flex items-center">
-                                <button
-                                    class="bg-red-600 text-white active:bg-red-500 disabled:opacity-50 text-sm font-bold uppercase px-1 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                                    type="button"
-                                    disabled="{!drink.available > 0}"
-                                >Make</button>
-                                <Dropdown {color}/>
-                            </div>
+                            <Dropdown {color}/>
                         </td>
                     </tr>
                 {/each}

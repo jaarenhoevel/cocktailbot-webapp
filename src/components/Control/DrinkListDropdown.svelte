@@ -29,7 +29,7 @@
         class="{color === 'default'
             ? 'text-slate-500'
             : 'text-white'} py-1 px-3"
-        href="#pablo"
+        href="#make"
         bind:this={btnDropdownRef}
         on:click={toggleDropdown}
     >
