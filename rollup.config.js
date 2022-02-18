@@ -20,6 +20,7 @@ const aliases = alias({
     { find: "components", replacement: "src/components" },
     { find: "views", replacement: "src/views" },
     { find: "assets", replacement: "src/assets" },
+    { find: "stores", replacement: "src/stores"},
   ],
 });
 
@@ -47,7 +48,7 @@ const indexTemplate = `
     <script defer src="<<live-preview-link>>/build/bundle.js"></script>
   </head>
 
-  <body class="text-slate-700 antialiased dark:bg-slate-800">
+  <body class="text-slate-700 antialiased dark:bg-slate-800 bg-slate-100">
     <noscript>
       <strong
         >Please enable JavaScript in your browser.</strong

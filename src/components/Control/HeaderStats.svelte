@@ -1,5 +1,5 @@
 <script>
-    import { status, config, drinks } from "../../stores/bot.js";
+    import { status, config, drinks } from "stores/bot.js";
 
     import CardStats from "components/Control/CardStats.svelte";
 
@@ -11,7 +11,7 @@
 </script>
 
 <!-- Header -->
-<div class="relative md:pt-32 pb-32 pt-12">
+<div class="relative md:pt-32 pb-32 pt-12 bg-red-500 dark:bg-transparent">
     <div class="px-4 md:px-10 mx-auto w-full">
         <div>
             <!-- Card stats -->

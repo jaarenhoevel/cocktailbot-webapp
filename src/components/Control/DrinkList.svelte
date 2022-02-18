@@ -1,11 +1,11 @@
 <script>
     import { onMount } from "svelte";
-    import { apiAddress } from "../../stores/bot";
+    import { apiAddress } from "stores/bot.js";
 
     import Dropdown from "components/Control/DrinkListDropdown.svelte";
 
     // default or accent color
-    export let color = "accent";
+    export let color = "default";
     export let available = false;
 
     let drinks = {};

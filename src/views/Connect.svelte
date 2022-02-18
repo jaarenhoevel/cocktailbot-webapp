@@ -1,8 +1,8 @@
 <script>
     import { onMount } from "svelte";
 
-    import Navbar from "../components/Connect/Navbar.svelte";
-    import Footer from "../components/Connect/Footer.svelte";
+    import Navbar from "components/Connect/Navbar.svelte";
+    import Footer from "components/Connect/Footer.svelte";
 
     const background = "../assets/img/connect_bg.png";
 
