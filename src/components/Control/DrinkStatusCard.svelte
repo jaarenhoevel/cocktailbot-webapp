@@ -17,6 +17,8 @@
     let progressInterval = null;
 
     async function makeDrink() {
+        localStorage.setItem("drink-size", drinkSize);
+        
         const result = await fetch(`${apiAddress}/drinks/${drinkId}`, {
             method: "PATCH",
             headers: {

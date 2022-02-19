@@ -1,5 +1,5 @@
 <script>
-    import { status, config, drinks } from "stores/bot.js";
+    import { status, config } from "stores/bot.js";
 
     import CardStats from "components/Control/CardStats.svelte";
 

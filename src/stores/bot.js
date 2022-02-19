@@ -37,7 +37,7 @@ export const drinks = readable({}, function start(set) {
     };
     
     update();
-    const interval = setInterval(update, 30000);
+    const interval = setInterval(update, 15000);
 
     return function stop() {
         clearInterval(interval);
@@ -58,7 +58,7 @@ export const ingredients = readable({}, function start(set) {
     };
 
     update();
-    const interval = setInterval(update, 30000);
+    const interval = setInterval(update, 15000);
 
     return function stop() {
         clearInterval(interval);
@@ -79,7 +79,28 @@ export const config = readable({}, function start(set) {
     };
     
     update();
-    const interval = setInterval(update, 30000);
+    const interval = setInterval(update, 15000);
+
+    return function stop() {
+        clearInterval(interval);
+    }
+});
+
+export const reservoirs = readable([], function start(set) {
+    const update = async () => {
+        fetch(apiAddress + "/reservoirs").then((response) => {
+            response.json().then((reservoirs) => {
+                set(reservoirs);
+            }).catch(() => {
+                set({});
+            });
+        }).catch(() => {
+            set({});
+        })
+    };
+    
+    update();
+    const interval = setInterval(update, 15000);
 
     return function stop() {
         clearInterval(interval);

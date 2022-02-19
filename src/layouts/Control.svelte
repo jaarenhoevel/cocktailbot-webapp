@@ -9,6 +9,7 @@
     import Dashboard from "views/Control/Dashboard.svelte";
     import Drinks from "views/Control/Drinks.svelte";
     import Drink from "views/Control/Drink.svelte";
+    import Reservoirs from "views/Control/Reservoirs.svelte";
 
     export let location = "";
     export let control;
@@ -25,6 +26,7 @@
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/drinks" component={Drinks} />
                 <Route path="/drinks/*drinkId" component={Drink} />
+                <Route path="/reservoirs" component={Reservoirs} />
             </Router>
             <Footer />    
         </div>
