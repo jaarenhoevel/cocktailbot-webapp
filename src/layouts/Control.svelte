@@ -1,6 +1,5 @@
 <script>
     import { Router, Route } from "svelte-routing";
-    import { onMount } from "svelte";
 
     import Sidebar from "components/Control/Sidebar.svelte";
     import Navbar from "components/Control/Navbar.svelte";
@@ -10,6 +9,7 @@
     import Drinks from "views/Control/Drinks.svelte";
     import Drink from "views/Control/Drink.svelte";
     import Reservoirs from "views/Control/Reservoirs.svelte";
+    import Reservoir from "views/Control/Reservoir.svelte";
 
     export let location = "";
     export let control;
@@ -27,6 +27,7 @@
                 <Route path="/drinks" component={Drinks} />
                 <Route path="/drinks/*drinkId" component={Drink} />
                 <Route path="/reservoirs" component={Reservoirs} />
+                <Route path="/reservoirs/*reservoirId" component={Reservoir} />
             </Router>
             <Footer />    
         </div>
