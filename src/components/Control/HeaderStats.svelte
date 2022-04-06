@@ -4,7 +4,7 @@
     import CardStats from "components/Control/CardStats.svelte";
 
     $: statusMessage = ($status.ready) ? "READY": "BUSY";
-    $: currentOutput = ($config.outputs?.[$status.activeOutput]?.name || "NOT SET").toUpperCase();
+    $: currentOutput = ($config.outputs?.[$status.selectedOutput]?.name || "NOT SET").toUpperCase();
     $: currentDrink = ($status?.drink?.name || "NONE").toUpperCase();
     $: temperature = "-°C";
 
