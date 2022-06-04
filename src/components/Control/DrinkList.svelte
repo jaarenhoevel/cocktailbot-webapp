@@ -10,6 +10,8 @@
 
     let drinks = {};
 
+    let drinkFilter = "";
+
     onMount(async () => {
         try {
             const result = await fetch(`${apiAddress}/drinks${available ? "?available=1" : ""}`);
@@ -30,12 +32,19 @@
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3
-                    class="font-semibold text-lg {color === 'default'
+                    class="py-3 float-left font-semibold text-lg {color === 'default'
                         ? 'text-slate-700 dark:text-slate-300'
                         : 'text-white'}"
                 >
                     {available ? "Available " : ""}Drinks
                 </h3>
+                <input 
+                    id="drink-list-filter"
+                    type="text"
+                    bind:value={drinkFilter}
+                    class="float-right border-0 px-3 py-3 placeholder-slate-300 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150" 
+                    placeholder="Filter drinks..."    
+                />
             </div>
         </div>
     </div>
@@ -93,7 +102,7 @@
                 </tr>
             </thead>
             <tbody>
-                {#each Object.entries(drinks) as [drinkId, drink]}    
+                {#each Object.entries(drinks).filter(([ ,drink]) => drink.name.toLowerCase().indexOf(drinkFilter.toLowerCase()) !== -1) as [drinkId, drink]}    
                     <tr class="dark:text-slate-300">
                         <th
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
