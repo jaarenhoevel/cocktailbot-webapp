@@ -142,7 +142,7 @@
                         on:click={makeDrink}
                     >
                         <i class="text-white fas fa-circle-notch w-3 mr-2 animate-spin {progress < 0  || progress >= 1? "hidden" : ""}" />
-                        {progress >= 0 && progress < 1 ? `Making drink... ${progress * 100}%` : "Make"}
+                        {progress >= 0 && progress < 1 ? `Making drink... ${progress * 100}%` : `Make (${drinkSizes[drinkSize]}ml)`}
                     </button>
                 </div>
             </div>
