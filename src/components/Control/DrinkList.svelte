@@ -28,7 +28,7 @@
         ? 'bg-white dark:bg-slate-900'
         : 'bg-red-800 text-white'}"
 >
-    <div class="rounded-t mb-0 px-4 py-3 border-0">
+    <div class="rounded-t mb-0 px-4 py-2 border-0">
         <div class="flex flex-wrap items-center">
             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                 <h3
@@ -38,11 +38,18 @@
                 >
                     {available ? "Available " : ""}Drinks
                 </h3>
+                <button
+                    class="float-right bg-red-500 text-white active:bg-red-600 font-bold uppercase text-sm px-4 ml-2 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                    type="button"
+                    on:click={() => {drinkFilter = ""}}
+                >
+                    Clear
+                </button>
                 <input 
                     id="drink-list-filter"
                     type="text"
                     bind:value={drinkFilter}
-                    class="float-right border-0 px-3 py-3 placeholder-slate-300 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150" 
+                    class="float-right border-0 px-3 py-2 placeholder-slate-400 text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150" 
                     placeholder="Filter drinks..."    
                 />
             </div>
