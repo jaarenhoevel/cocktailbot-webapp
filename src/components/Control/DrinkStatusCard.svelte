@@ -101,7 +101,7 @@
         </div>
         <div class="text-center mt-12">
             <h3
-                class="text-xl font-semibold leading-normal mb-2 text-slate-700 mb-2"
+                class="text-xl font-semibold leading-normal mb-2 text-slate-700"
             >
                 {drink.name || "Loading..."}
             </h3>

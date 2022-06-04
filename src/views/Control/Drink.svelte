@@ -5,7 +5,7 @@
     export let drinkId;
 </script>
 
-<div class="flex flex-wrap">
+<div class="flex flex-wrap-reverse">
     <div class="w-full xl:w-8/12 px-4">
         <DrinkSettingsCard {drinkId} />
     </div>
